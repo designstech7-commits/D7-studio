@@ -37,7 +37,7 @@ export default function PortfolioClient({ items, categories }: PortfolioClientPr
 
   const allCategories = categories.length > 0
     ? categories
-    : [...new Set(DEMO_ITEMS.map((i) => i.category.slug))].map((slug) => {
+    : Array.from(new Set(DEMO_ITEMS.map((i) => i.category.slug))).map((slug) => {
         const item = DEMO_ITEMS.find((i) => i.category.slug === slug)!;
         return { id: slug, name: item.category.name, slug, description: null, sort_order: 0 };
       });
