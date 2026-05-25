@@ -645,7 +645,7 @@ function Step6({ data, set }: { data: FormData; set: (k: string, v: unknown) => 
           }`}
           onClick={() => set("agreement_accepted", !data.agreement_accepted)}
         >
-          {data.agreement_accepted && <span className="text-ink text-xs font-bold">✓</span>}
+          {Boolean(data.agreement_accepted) && <span className="text-ink text-xs font-bold">✓</span>}
         </div>
         <span className="text-sm text-platinum/50 leading-relaxed">
           I have read and agree to the terms above. I understand this submission is a brief request, not a binding contract, and that a formal proposal will be issued separately.
